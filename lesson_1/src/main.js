@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import ReactDOM from "react-dom";
 
 const rootElement = document.getElementById("root");
@@ -10,9 +11,24 @@ const Greet = (props) => {
     ])         
 }
 
+
+Greet.propTypes = {
+    firstName: PropTypes.string.isRequired,
+    lastName: PropTypes.string.isRequired,
+    isAdmin: PropTypes.bool
+};
+
 ReactDOM.render( 
-    React.createElement(Greet, {firstName: 'John', lastName : 'Doe'})  
+    React.createElement(Greet, {firstName: 'John', lastName : 'Doe', isAdmin : "true"})  
     ,rootElement
  )
 
+ /**
+  * object
+  * array
+  * number
+  * onOf
+  * shape
+  */
 
+  //https://reactjs.org/docs/typechecking-with-proptypes.html
