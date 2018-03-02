@@ -24,7 +24,7 @@ const mySecondComponent = ()=>{
 
 myFirstComponent.propTypes = {
 	name: PropTypes.string.isRequired,
-	age: PropTypes.number,
+	age: PropTypes.number.isRequired,
 	gender: PropTypes.oneOf(['male','female']).isRequired,
 	isAlive: PropTypes.bool
 }
