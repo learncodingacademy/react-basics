@@ -5,11 +5,12 @@ import PropTypes from 'prop-types';
 const rootElement = document.getElementById('root');
 
 const myFirstComponent = (props)=>{
+	const {name,age,gender,isAlive} = props;
 	return React.createElement('div',null,[
-		React.createElement('p',null,`The name is: ${props.name}`),
-		React.createElement('p',null,`The age is: ${props.age}`),
-		React.createElement('p',null,`The gender is: ${props.gender}`),
-		React.createElement('p',null,`Alive: ${props.isAlive}`),
+		React.createElement('p',null,`The name is: ${name}`),
+		React.createElement('p',null,`The age is: ${age}`),
+		React.createElement('p',null,`The gender is: ${gender}`),
+		React.createElement('p',null,`Alive: ${isAlive}`),
 		React.createElement('p',null,`----------------------------`)
 	])
 }
