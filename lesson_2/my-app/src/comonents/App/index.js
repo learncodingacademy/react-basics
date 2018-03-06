@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from "../../logo.svg"
 import Greet from "../Greet";
 import Wrapper from "../Wrapper";
+import Timer from "../Timer";
 import './App.css';
 
 
@@ -15,6 +16,7 @@ class App extends Component {
           <Img/>
           <h1 className="App-title">Welcome to React</h1>
         </header>
+        <Timer/>
         <Wrapper image = {React.createElement(Img)} >
           <Greet name = {'John'}/>
         </Wrapper>
