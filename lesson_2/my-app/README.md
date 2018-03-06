@@ -1,3 +1,4 @@
 > - Structure 
 > - Styling 
-  
+> - props.children
+
