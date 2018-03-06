@@ -5,6 +5,7 @@ class Wrapper extends React.Component {
        return (
            <div style = {{ margin : '0 auto', height : '100px', border : '1px solid green'}}>             
               {this.props.children}
+              {this.props.image}
            </div>
        )
    }

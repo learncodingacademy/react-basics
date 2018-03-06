@@ -5,15 +5,17 @@ import Wrapper from "../Wrapper";
 import './App.css';
 
 
+const Img = ()=> <img src={logo} className="App-logo" alt="logo" />;
+
 class App extends Component {
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+          <Img/>
           <h1 className="App-title">Welcome to React</h1>
         </header>
-        <Wrapper>
+        <Wrapper image = {React.createElement(Img)} >
           <Greet name = {'John'}/>
         </Wrapper>
       </div>
