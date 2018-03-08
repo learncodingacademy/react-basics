@@ -1,29 +1,26 @@
-import React from 'react';
+import React, {createElement} from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 
 const rootElement = document.getElementById('root');
 
-const myFirstComponent = (props)=>{
-	const {name,age,gender,isAlive} = props;
-	return React.createElement('div',null,[
-		React.createElement('p',null,`The name is: ${name}`),
-		React.createElement('p',null,`The age is: ${age}`),
-		React.createElement('p',null,`The gender is: ${gender}`),
-		React.createElement('p',null,`Alive: ${isAlive}`),
-		React.createElement('p',null,`----------------------------`)
+const MyFirstComponent = ({name,age,gender,isAlive})=>
+	createElement('div',null,[
+		createElement('p',null,`The name is: ${name}`),
+		createElement('p',null,`The age is: ${age}`),
+		createElement('p',null,`The gender is: ${gender}`),
+		createElement('p',null,`Alive: ${isAlive}`),
+		createElement('p',null,`----------------------------`)
 	])
-}
 
-const mySecondComponent = ()=>{
-	return React.createElement('div',null,[
-		React.createElement(myFirstComponent,{name:"Jon",age:20,gender:'male',isAlive: true}),
-		React.createElement(myFirstComponent,{name:"Jane",age:25,gender:'female',isAlive: true}),
-		React.createElement(myFirstComponent,{name:"Jim",age:20,gender:'male',isAlive: false}),
+const MySecondComponent = ()=>
+	createElement('div',null,[
+		createElement(MyFirstComponent,{name:"Jon",age:20,gender:'male',isAlive: true}),
+		createElement(MyFirstComponent,{name:"Jane",age:25,gender:'female',isAlive: true}),
+		createElement(MyFirstComponent,{name:"Jim",age:20,gender:'male',isAlive: false}),
 	])
-}
 
-myFirstComponent.propTypes = {
+MyFirstComponent.propTypes = {
 	name: PropTypes.string.isRequired,
 	age: PropTypes.number.isRequired,
 	gender: PropTypes.oneOf(['male','female']).isRequired,
@@ -31,6 +28,6 @@ myFirstComponent.propTypes = {
 }
 
 ReactDOM.render(
-	React.createElement(mySecondComponent),
+	createElement(MySecondComponent),
 	rootElement
 )
