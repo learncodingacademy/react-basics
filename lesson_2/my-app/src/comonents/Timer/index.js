@@ -1,6 +1,5 @@
 import React, {Component} from "react";
 
-
 class Timer extends Component {
     constructor(props){
         super(props);
@@ -8,8 +7,7 @@ class Timer extends Component {
             name : 'John',
             count : 1
         }
-
-        this.testVar = "some test var"
+        this.testVar = "Initial var state"
     }
 
     componentDidMount(){
@@ -19,7 +17,7 @@ class Timer extends Component {
        setInterval( ()=> { 
           this.setState({count : this.state.count + 1})
           this.testVar = Math.random();
-        }, 400 )        
+        }, 4000 )        
     }
 
     componentDidUpdate(){
@@ -30,13 +28,12 @@ class Timer extends Component {
         console.log('render');
         return(
             <div>
-                hi {this.state.name}
+                Hi {this.state.name}
                 <br/>
                 <code>{this.testVar}</code>
                 <h2>{this.state.count}</h2>
             </div>
         ) 
-    
     }
 }
 
