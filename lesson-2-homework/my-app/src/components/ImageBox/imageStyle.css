@@ -1,0 +1,23 @@
+.panel {
+	/*width: 100%;*/
+	border : 1px solid grey;
+	background-color: green;
+	margin: 25px 500px; 
+	border-bottom-left-radius: 50px;
+	border-top-right-radius: 50px;
+}
+
+.title {
+	height: 30px;
+	margin-top: 3px;
+	color: white;
+	font-style: italic;
+}
+
+.image {
+	border: 4px solid black;
+	border-bottom-left-radius: 50px;
+	border-top-right-radius: 50px;
+	border-top-color: grey;
+	border-bottom-color: grey;
+}
