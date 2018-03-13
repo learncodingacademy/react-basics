@@ -12,7 +12,7 @@ class Clock extends Component {
 		this.clearTimer = this.clearTimer.bind(this);
 	}
 
-handleClick(){
+handleClock(){
 	if (this.state.second === 60) {
 		this.setState({second : 0});
 		this.setState({minute : this.state.minute + 1})
@@ -31,7 +31,7 @@ clearTimer(){
 componentDidMount() {
 	setInterval(()=>{
 		this.setState({second : this.state.second + 1});
-		this.handleClick();
+		this.handleClock();
 	},1000)
 }
 
@@ -40,7 +40,7 @@ render(){
 			<div>
 			    <h1>{this.title}</h1>
 			    <h2>{this.state.hour} : {this.state.minute} : {this.state.second} </h2>
-			    <button onClick = {this.clearTimer} style = {{cursor : "pointer" }}>Clear</button>
+			    <button onClick = {this.clearTimer} style = {{cursor : "pointer",marginBottom : "20px" }}>Clear</button>
 		    </div>
 		)
 	}
