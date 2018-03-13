@@ -25,3 +25,12 @@
   -----
 
   - componentWillUnmount()
+
+
+  --- homework 
+  - modify create react app | sass loader
+  - fix previous todos
+
+  
+
+
