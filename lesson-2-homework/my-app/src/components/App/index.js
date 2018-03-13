@@ -3,8 +3,9 @@ import reactLogo from '../../assets/logo.svg';
 import vueLogo from '../../assets/vue.png';
 import angularLogo from '../../assets/angular.png';
 import BarTitle from '../Bar';
-import Panel from '../ImageBox';
+import Panel from '../Panel';
 import Clock from '../Clock';
+import Panel2 from "../Panel2";
 import './App.css';
 
 class App extends Component {
@@ -21,7 +22,7 @@ class App extends Component {
             <p>React: JavaScript library</p> 
           </div>
         </Panel>
-        <Panel title="Vue logo">
+        <Panel title="Vue logo" propToRender = {<h1>hi, prop to render </h1>} >
           <div>
             <img src={vueLogo} className="App-logo" alt="Vue logo" />
             <p>Vue: JavaScript framework</p>
@@ -33,7 +34,10 @@ class App extends Component {
             <p>Angular: JavaScript framework</p>
           </div>
         </Panel>
-        <Clock />
+
+        <Panel2 title = {"test logo"} imageSrc = {require('../../assets/vue.png')} />
+
+        <Clock title = {"some title"}/>
       </div>
     );
   }

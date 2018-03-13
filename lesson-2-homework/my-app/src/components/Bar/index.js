@@ -8,10 +8,15 @@ const styles = {
 	fontSize : '20px',
 }
 
-const BoxTitle = ({titleName})=> <div style = {styles}>
-		This is the {titleName}</div>
+//TODO: rename componennt (should be the same as dict name or file name)   
+const BoxTitle = ({titleName})=> (
+      <div style = {styles}>
+		This is the {titleName}
+	 </div>);
 
 
-BoxTitle.propTypes = {titleName : PropTypes.string.isRequired }
+BoxTitle.propTypes = {
+	titleName : PropTypes.string.isRequired 
+}
 		
 export default BoxTitle;
