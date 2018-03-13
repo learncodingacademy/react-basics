@@ -4,14 +4,34 @@ class Clock extends Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			value : 0
+			second : 0,
+			minute : 0,
+			hour : 0
 		};
-		this.title = "Number is" 
+		this.title = "You opened this page";
+		this.clearTimer = this.clearTimer.bind(this);
 	}
+
+handleClick(){
+	if (this.state.second === 60) {
+		this.setState({second : 0});
+		this.setState({minute : this.state.minute + 1})
+	}else if (this.state.minute === 60) {
+		this.setState({minute : 0});
+		this.setState({hour : this.state.hour + 1})
+	}
+}
+
+clearTimer(){
+	this.setState({second : 0});
+	this.setState({minute : 0});
+	this.setState({hour : 0})
+}
 
 componentDidMount() {
 	setInterval(()=>{
-		this.setState({value : this.state.value+1});
+		this.setState({second : this.state.second + 1});
+		this.handleClick();
 	},1000)
 }
 
@@ -19,7 +39,8 @@ render(){
 		return(
 			<div>
 			    <h1>{this.title}</h1>
-			    <h2>{this.state.value}</h2>
+			    <h2>{this.state.hour} : {this.state.minute} : {this.state.second} </h2>
+			    <button onClick = {this.clearTimer} style = {{cursor : "pointer" }}>Clear</button>
 		    </div>
 		)
 	}

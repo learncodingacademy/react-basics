@@ -12,23 +12,25 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={reactLogo} className="App-logo" alt="React logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <BarTitle titleName='Main Bar'/>
          <Panel title="React logo">
           <div>
             <img src={reactLogo} className="App-logo" alt="React logo" />
+            <p>React: JavaScript library</p> 
           </div>
         </Panel>
         <Panel title="Vue logo">
           <div>
             <img src={vueLogo} className="App-logo" alt="Vue logo" />
+            <p>Vue: JavaScript framework</p>
           </div>
         </Panel>
          <Panel title="Angular logo">
           <div>
             <img src={angularLogo} className="App-logo" alt="Angular logo" />
+            <p>Angular: JavaScript framework</p>
           </div>
         </Panel>
         <Clock />

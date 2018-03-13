@@ -1,5 +1,4 @@
 .panel {
-	/*width: 100%;*/
 	border : 1px solid grey;
 	background-color: green;
 	margin: 25px 500px; 
@@ -12,6 +11,7 @@
 	margin-top: 3px;
 	color: white;
 	font-style: italic;
+	font-weight: bold;
 }
 
 .image {
