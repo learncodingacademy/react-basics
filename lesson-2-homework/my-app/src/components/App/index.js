@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import reactLogo from '../../assets/logo.svg';
 import vueLogo from '../../assets/vue.png';
 import angularLogo from '../../assets/angular.png';
-import BarTitle from '../Bar';
+import Bar from '../Bar';
 import Panel from '../Panel';
 import Clock from '../Clock';
 import Panel2 from "../Panel2";
@@ -15,7 +15,7 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Welcome to React</h1>
         </header>
-        <BarTitle titleName='Main Bar'/>
+        <Bar titleName='Main Bar'/>
          <Panel title="React logo">
           <div>
             <img src={reactLogo} className="App-logo" alt="React logo" />

@@ -14,7 +14,6 @@ constructor(props){
 		minute : 0,
 		hour : 0
 	};
-
 	this.title = this.props.title; 
 }
 
@@ -26,8 +25,9 @@ handleClock(){
 		});
 	} else if (this.state.minute === 60) {
 		this.setState({
-			minute : 0});
-		this.setState({hour : this.state.hour + 1})
+			minute : 0,
+			hour : this.state.hour + 1
+		});
 	}
 }
 
@@ -57,9 +57,7 @@ render(){
 	}
 }
 
-
 // Clock.proptypes =  {
-
 // }
 
 export default Clock;

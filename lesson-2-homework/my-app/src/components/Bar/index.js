@@ -7,16 +7,14 @@ const styles = {
 	color : "white",
 	fontSize : '20px',
 }
-
-//TODO: rename componennt (should be the same as dict name or file name)   
-const BoxTitle = ({titleName})=> (
+ 
+const Bar = ({titleName})=> (
       <div style = {styles}>
 		This is the {titleName}
 	 </div>);
 
-
-BoxTitle.propTypes = {
+Bar.propTypes = {
 	titleName : PropTypes.string.isRequired 
 }
 		
-export default BoxTitle;
+export default Bar;

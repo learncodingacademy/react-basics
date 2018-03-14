@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import './imageStyle.css';
+import './style.css';
 
-export default class Panel extends Component {
+class Panel extends Component {
   render() {
     
     return (
@@ -13,4 +13,6 @@ export default class Panel extends Component {
     );
   }
 }
+
+export default Panel;
 
