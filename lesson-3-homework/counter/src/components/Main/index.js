@@ -9,8 +9,11 @@ class Main extends Component{
     this.state = {
       count : 0,
       showRange : false,
-      showCheck : false
-    	}
+	  showCheck : false,
+	  max: 10,
+	  min: -10,  
+	 }
+	 
   	}
 
 	onClickShowRange = (e) => {
@@ -30,10 +33,10 @@ class Main extends Component{
 		this.setState({
 			count : newCount + 1
 		});
-		if (newCount === 10) {
-			alert("The max value is: 10");
+		if (newCount === this.state.max) {
+			alert("The max value is: " + this.state.max );
 			this.setState({
-			count : 10
+		       count: this.state.max
 			})
 		}
 	}
@@ -43,36 +46,47 @@ class Main extends Component{
 		this.setState({
 			count : newCount - 1
 		});
-		if (newCount === -10) {
-			alert("The min value is: -10");
+		if (newCount === this.state.min) {
+			alert("The min value is: " + this.state.min);
 			this.setState({
-			count : -10
+		 	  count : this.state.min
 			})
 		}
 	}
 
 	handleClickReset = () => {
-		if (this.state.count === 0) {
+		if (this.state.count === this.state.max) {
 			alert("Nothing to reset!");
-		}else{
+		} else{
 			this.setState({
 				count : 0
 			})
 		}	
 	}
+
+	setRange = ({minvalue, maxvalue}) => {
+		this.setState({min :minvalue, max : maxvalue })
+	}
+	
   
     render() {
-    return (
-      <div className="">
-        <h1>{this.state.count}</h1>
-        <button className = "btn incBtn" onClick = {this.handleClickIncrement}>+</button>
-        <button className = "btn resetBtn" onClick = {this.handleClickReset}>Reset</button>
-        <button className = "btn decBtn" onClick = {this.handleClickDecrement}>-</button>
-        <button className = "smallBtn" onClick={this.onClickShowRange.bind(this)}>Range</button>
-        <button className = "smallBtn" onClick={this.onClickShowCheck.bind(this)}>Type</button>
-        {this.state.showRange && <Range />}
-        {this.state.showCheck && <Check />}
-      </div>
+		return (
+			<div className="">
+				<h1>{this.state.count}</h1>
+				<button className = "btn incBtn" onClick = {this.handleClickIncrement}>+</button>
+				<button className = "btn resetBtn" onClick = {this.handleClickReset}>Reset</button>
+				<button className = "btn decBtn" onClick = {this.handleClickDecrement}>-</button>
+				<button className = "smallBtn" onClick={this.onClickShowRange.bind(this)}>Range</button>
+				<button className = "smallBtn" onClick={this.onClickShowCheck.bind(this)}>Type</button>
+				{
+					this.state.showRange && <Range 
+							 	setRange = {this.setRange} 
+							 	min = {this.state.min}
+								max = {this.state.max}
+							 />
+				}
+				{this.state.showCheck && <Check />}
+			</div>
     );
   }
 }

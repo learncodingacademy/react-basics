@@ -5,27 +5,31 @@ class Range extends Component{
 	constructor(props) {
     super(props);
     	this.state = {
-    		minvalue : 0,
-    		maxvalue : 10
+    		minvalue : props.min,
+    		maxvalue : props.max
      	};
     }
 
-	handleChange = (event) => {
-		this.setState({
-			minvalue : event.target.minvalue,
-			maxvalue : event.target.maxvalue
-		});
+	handleMin = ({target}) => {
+		this.setState({minvalue : +target.value});
 	}
+	
+	handleMax = ({target}) => this.setState({maxvalue : +target.value});
 
 	render() {
 	    return (
 	      <div className="checkBox">
 	      	<label>Max
-	      		<input type="text" className = 'input' maxvalue={this.state.maxvalue} onChange={this.handleChange}/>
+	      		<input type="text" className = 'input' value={this.state.maxvalue} onChange={this.handleMax}/>
 	      	</label>
 	      	<label>Min
-	      		<input type="text" className = 'input' minvalue={this.state.minvalue} onChange={this.handleChange} />
+	      		<input type="text" className = 'input' value={this.state.minvalue} onChange={this.handleMin} />
 	      	</label>
+			<button onClick = {()=> {
+                this.props.setRange(this.state);
+			}}>
+			set range
+			</button>  
 	      </div>
 	    );
 	}
