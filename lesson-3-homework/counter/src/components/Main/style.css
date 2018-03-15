@@ -1,0 +1,38 @@
+.btn {
+	margin: 3px;
+	width: 50px;
+	height: 30px;
+	cursor: pointer;
+	border: 2px solid;
+	border-radius: 5px; 
+	outline: none;
+	font-size: 13px;
+	font-weight: bold;
+}
+
+.smallBtn{
+	width: 36px;
+	height: 20px;
+	cursor: pointer;
+	border: 1px solid;
+	border-radius: 5px; 
+	outline: none;
+	font-size: 8px;
+	font-weight: bold;
+	font-style: italic;
+	background-color: lightblue;
+	margin: 15px 5px;
+
+}
+
+.resetBtn{
+	background-color: yellow;
+}
+
+.incBtn {
+	background-color: green;
+}
+
+.decBtn {
+	background-color: red;
+}
