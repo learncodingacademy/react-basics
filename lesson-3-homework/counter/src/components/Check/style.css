@@ -1,11 +1,10 @@
-.input {
-	width: 30px;
+.inputCheck {
 	margin: 10px;
 	font-weight: bold;
-	border-radius: 5px;
+	cursor: pointer;
 }
 
-.checkBox{
+.checkBox {
 	width: 200px;
 	border-top: 1px solid;
 }

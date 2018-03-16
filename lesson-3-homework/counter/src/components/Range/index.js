@@ -18,17 +18,17 @@ class Range extends Component{
 
 	render() {
 	    return (
-	      <div className="checkBox">
-	      	<label>Max
-	      		<input type="text" className = 'input' value={this.state.maxvalue} onChange={this.handleMax}/>
-	      	</label>
+	      <div className="rangeBox">
 	      	<label>Min
-	      		<input type="text" className = 'input' value={this.state.minvalue} onChange={this.handleMin} />
+	      		<input type="text" maxLength='2' className='inputText' value={this.state.minvalue} onChange={this.handleMin} />
 	      	</label>
-			<button onClick = {()=> {
+	      	<label>Max
+	      		<input type="text" maxLength='2' className='inputText' value={this.state.maxvalue} onChange={this.handleMax}/>
+	      	</label>
+			<button className = 'btn btn-primary btn-sm' onClick = {()=> {
                 this.props.setRange(this.state);
 			}}>
-			set range
+			Set range
 			</button>  
 	      </div>
 	    );

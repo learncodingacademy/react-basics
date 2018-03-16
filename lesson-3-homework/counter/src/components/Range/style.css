@@ -3,3 +3,17 @@
 	width: 200px;
 	margin-top: 5px; 
 }
+
+.btn-primary {
+	margin-bottom: 10px;
+	width: 82px;
+}
+
+.inputText{
+	padding-left: 3px; 
+	width: 30px;
+	border-radius: 5px;
+	margin: 10px;
+	font-weight: bold;
+	cursor: pointer;
+}
