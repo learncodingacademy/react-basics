@@ -2,7 +2,16 @@ import React, {Component} from 'react';
 import Range from '../Range';
 import Check from '../Check';
 import './style.css';
-  
+
+
+const ActionButton = ({actionHandler, sign, classSequnace}) => {
+   return (
+      <button type="button" className = {classSequnace} onClick = {actionHandler}>
+	  	{sign}
+	  </button>
+	)
+}
+
 class Main extends Component{
 	constructor(props){
     super(props);
@@ -87,17 +96,29 @@ class Main extends Component{
   				step : stepCheck
   			})
   		}
-  	}
+	  }
+	  
 
+	 //TODO: implement! 
+	 rednerRange = () =>  {
+  
+	 }
+
+	 //TODO: reuse  ActionButton
+	//TODO: remove methods binding!
     render() {
 		return (
 			<div className="">
 				<h1>{this.state.count}</h1>
-				<button type="button" className = "btn btn-danger" onClick = {this.handleClickDecrement}>-</button>
+
+				<ActionButton actionHandler = {this.handleClickDecrement} sign = {"-"} classSequnace = {"btn btn-danger"} />
+				
 				<button type="button" className = "btn btn-warning" onClick = {this.handleClickReset}>Reset</button>
 				<button type="button" className = "btn btn-success" onClick = {this.handleClickIncrement}>+</button>
+
 				<button className = "smallBtn btn-secondary" onClick={this.onClickShowRange.bind(this)}>Range</button>
 				<button className = "smallBtn btn-secondary" onClick={this.onClickShowCheck.bind(this)}>Type</button>
+				{/*this.rednerRange*/}
 				{
 					this.state.showRange && <Range 
 							 	setRange = {this.setRange} 
@@ -105,7 +126,8 @@ class Main extends Component{
 								max = {this.state.max}
 							 />
 				}
-				{this.state.showCheck && <Check 
+				{
+					this.state.showCheck && <Check 
 							setCheck = {this.setCheck}
 							isEven = {this.state.isEven}
 							isOdd = {this.state.isOdd}
