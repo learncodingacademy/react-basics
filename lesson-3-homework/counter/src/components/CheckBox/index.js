@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './style.css';
 
-class Check extends Component{
+class CheckBox extends Component{
 	constructor(props){
 		super(props);
 		this.state = {
@@ -37,7 +37,7 @@ class Check extends Component{
 				<label>Odd
 					<input type="checkBox" checked = {this.state.isOdd} onClick={this.setOdd} onChange={this.handleOdd} className = 'inputCheck' />
 				</label> 
-				<button className = 'btn btn-primary btn-sm' onClick = {()=> {
+				<button className = 'btn btn-light btn-sm' onClick = {()=> {
 	                this.props.setCheck(this.state);
 				}}>
 				Set type
@@ -47,4 +47,4 @@ class Check extends Component{
 	}
 }
 
-export default Check;
+export default CheckBox;
