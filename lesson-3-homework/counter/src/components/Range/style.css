@@ -1,12 +1,7 @@
 .rangeBox{
-	border-top: 1px solid;
+	border-top: 1px solid lightgray;
 	width: 200px;
 	margin-top: 5px; 
-}
-
-.btn-primary {
-	margin-bottom: 10px;
-	width: 82px;
 }
 
 .inputText{

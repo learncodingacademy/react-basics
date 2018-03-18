@@ -25,7 +25,7 @@ class Range extends Component{
 	      	<label>Max
 	      		<input type="text" maxLength='2' className='inputText' value={this.state.maxvalue} onChange={this.handleMax}/>
 	      	</label>
-			<button className = 'btn btn-primary btn-sm' onClick = {()=> {
+			<button className = 'btn btn-light btn-sm' onClick = {()=> {
                 this.props.setRange(this.state);
 			}}>
 			Set range

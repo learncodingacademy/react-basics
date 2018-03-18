@@ -3,28 +3,25 @@
 	width: 38px;
 	height: 20px;
 	cursor: pointer;
-	border: 1px solid;
+	border: 1px solid lightgray;
 	border-radius: 5px; 
 	outline: none;
 	font-size: 8px;
 	font-weight: bold;
 	font-style: italic;
+	background-color: white;
 	margin: 15px 5px;
 }
 
-.btn-success {
-	width: 35px;
-	height: 35px;
+.smallBtn:hover{
+	background-color: #E2E6EA;
+}
+
+.btn{
+	border: 1px solid lightgray;
 	margin: 3px;
 }
 
-.btn-warning {
-	height: 35px;
-	margin: 10px;	
-}
-
-.btn-danger {
-	width: 35px;
-	height: 35px;
-	margin: 3px;
-}
+.btn-sm{
+	margin-bottom: 15px; 
+} 

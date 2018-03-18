@@ -1,16 +1,8 @@
 import React, {Component} from 'react';
 import Range from '../Range';
-import Check from '../Check';
+import CheckBox from '../CheckBox';
+import ActionButton from '../ActionButton';
 import './style.css';
-
-
-const ActionButton = ({actionHandler, sign, classSequnace}) => {
-   return (
-      <button type="button" className = {classSequnace} onClick = {actionHandler}>
-	  	{sign}
-	  </button>
-	)
-}
 
 class Main extends Component{
 	constructor(props){
@@ -18,7 +10,7 @@ class Main extends Component{
 	    this.state = {
 			count : 0,
 			showRange : false,
-			showCheck : false,
+			showCheckBox : false,
 			max : 10,
 			min : 0, 
 			isEven : false,
@@ -33,9 +25,9 @@ class Main extends Component{
 	    })
 	}
 
-	onClickShowCheck = (e) => {
+	onClickShowCheckBoxCont = (e) => {
 	    this.setState({
-	    	showCheck : !this.state.showCheck
+	    	showCheckBox : !this.state.showCheckBox
 	    })
 	}
 
@@ -70,16 +62,22 @@ class Main extends Component{
 			step : 1,
 			count : 0,
 			showRange : false,
-			showCheck : false
+			showCheckBox : false,
+			max : 10,
+			min : 0
 		})
 	}
 
 	setRange = ({minvalue, maxvalue}) => {
-		this.setState({
+		if (maxvalue <= minvalue) {
+			alert("(-_-) Enter correct range! (o_O)")
+		}else{
+			this.setState({
 			min :minvalue,
 			max : maxvalue,
 			count : minvalue
-		})
+			})
+		}
 	}
 
   	setCheck = ({stepCheck}) => {
@@ -100,25 +98,21 @@ class Main extends Component{
 	  
 
 	 //TODO: implement! 
-	 rednerRange = () =>  {
+	 renderRange = () =>  {
   
 	 }
 
-	 //TODO: reuse  ActionButton
-	//TODO: remove methods binding!
     render() {
 		return (
-			<div className="">
+			<div>
 				<h1>{this.state.count}</h1>
-
-				<ActionButton actionHandler = {this.handleClickDecrement} sign = {"-"} classSequnace = {"btn btn-danger"} />
+				<ActionButton actionHandler = {this.handleClickDecrement} sign = {"-"} classSequnace = {"btn btn-light"} />
+				<ActionButton actionHandler = {this.handleClickReset} sign = {"RESET"} classSequnace = {"btn btn-light"} />
+				<ActionButton actionHandler = {this.handleClickIncrement} sign = {"+"} classSequnace = {"btn btn-light"} />
+				<ActionButton actionHandler = {this.onClickShowRange} sign = {"Range"} classSequnace = {"smallBtn"} />
+				<ActionButton actionHandler = {this.onClickShowCheckBoxCont} sign = {"Type"} classSequnace = {"smallBtn"} />
 				
-				<button type="button" className = "btn btn-warning" onClick = {this.handleClickReset}>Reset</button>
-				<button type="button" className = "btn btn-success" onClick = {this.handleClickIncrement}>+</button>
-
-				<button className = "smallBtn btn-secondary" onClick={this.onClickShowRange.bind(this)}>Range</button>
-				<button className = "smallBtn btn-secondary" onClick={this.onClickShowCheck.bind(this)}>Type</button>
-				{/*this.rednerRange*/}
+				{/*this.renderRange*/}
 				{
 					this.state.showRange && <Range 
 							 	setRange = {this.setRange} 
@@ -127,7 +121,7 @@ class Main extends Component{
 							 />
 				}
 				{
-					this.state.showCheck && <Check 
+					this.state.showCheckBox && <CheckBox 
 							setCheck = {this.setCheck}
 							isEven = {this.state.isEven}
 							isOdd = {this.state.isOdd}

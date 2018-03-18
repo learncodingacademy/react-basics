@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import Main from '../Main';
-import './App.css';
+import './style.css';
 
 class App extends Component {
   render() {
     return (
-      <div className="App bg-secondary rounded border-secondary">
+      <div className="app-container bg-default rounded">
           <Main />
       </div>
     );
