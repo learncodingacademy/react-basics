@@ -5,9 +5,18 @@ import './App.css';
 class Button extends React.Component {
     render() {
       return (
+          <div>
         <button style={{background: this.context.color}}>
           {this.props.children}
         </button>
+
+          <ul>
+              {[78,4,3,4,45].map( (item, index) => {
+                  return <li key = {index}> {item} </li>
+              })}
+          </ul>
+
+        </div>
       );
     }
   }
@@ -40,8 +49,8 @@ class Button extends React.Component {
 
     render() {
       const color = "purple";
-      const children = this.props.messages.map((message) =>
-        <Message text={message.text} color={color} />
+      const children = this.props.messages.map((message, index) =>
+        <Message key = {index}  text={message.text} color={color} />
       );
       return <div>{children}</div>;
     }
