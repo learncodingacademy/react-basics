@@ -1,6 +1,7 @@
 import React from 'react';
 
-const ActionButton = ({actionHandler, sign, classSequnace}) => {
+const ActionButton = (props) => {
+   const {actionHandler, sign, classSequnace} = props;
    return (
       <button type="button" className = {classSequnace} onClick = {actionHandler}>
 	  	{sign}

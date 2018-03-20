@@ -8,21 +8,15 @@ class Range extends Component{
     	this.maxvalue = props.max
     }
 
-	handleMin = () => {
-		this.minvalue = this.minvalue.value;
-	}
-	
-	handleMax = () => {
-		this.maxvalue = this.maxvalue.value;;
-	}
+
 	render() {
 	    return (
 	      <div className="rangeBox">
 	      	<label>Min
-	      		<input type="text" maxLength='2' defaultValue="0" className='inputText' ref={(input) => this.minvalue = input} onChange={this.handleMin} />
+	      		<input type="text" maxLength='2'  className='inputText' ref={(input) => this.minvalue = input}/>
 	      	</label>
 	      	<label>Max
-	      		<input type="text" maxLength='2' defaultValue="10" className='inputText' ref={(input) => this.maxvalue = input} onChange={this.handleMax}/>
+	      		<input type="text" maxLength='2'  className='inputText' ref={(input) => this.maxvalue = input}/>
 	      	</label>
 			<button className = 'btn btn-light btn-sm' onClick = {()=> {
                 this.props.setRange(this.state);

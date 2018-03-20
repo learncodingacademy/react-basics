@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import Range from '../Range';
 import CheckBox from '../CheckBox';
 import ActionButton from '../ActionButton';
+import Test from '../../refs';
+
 import './style.css';
 
 class Main extends Component{
@@ -18,6 +20,7 @@ class Main extends Component{
 	}
 
 	onClickShowRange = () => {
+		debugger;
 	    this.showRange = !this.showRange
 	}
 
@@ -79,9 +82,15 @@ class Main extends Component{
   
 	 }
 
+    someFunc = (val) => {
+		
+		alert(val);
+	}
+
     render() {
 		return (
 			<div>
+				<Test name = {"sdsdsd"} doSmt = {this.someFunc} />	
 				<h1>{this.count}</h1>
 				<ActionButton actionHandler = {this.handleClickDecrement} sign = {"-"} classSequnace = {"btn btn-light"} />
 				<ActionButton actionHandler = {this.handleClickReset} sign = {"RESET"} classSequnace = {"btn btn-light"} />
