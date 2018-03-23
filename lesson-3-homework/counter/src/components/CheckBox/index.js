@@ -54,7 +54,7 @@ class CheckBox extends Component {
         <button
           className="btn btn-light btn-sm"
           onClick={() => {
-            this.props.setCheck(this.state);
+            this.props.setCheckBox(this.state);
           }}>
           Set type
         </button>

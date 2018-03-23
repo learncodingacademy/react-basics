@@ -109,7 +109,7 @@ class Main extends Component {
   renderCheckBox = () => {
     this.state.showCheckBox && (
       <CheckBox
-        setCheck={this.setCheck}
+        setCheckBox={this.setCheckBox}
         isEven={this.state.isEven}
         isOdd={this.state.isOdd}
       />
