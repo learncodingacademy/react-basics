@@ -1,0 +1,13 @@
+.active-nav {
+    font-weight: bold
+}
+
+li {
+    text-decoration: none;
+}
+
+.nav {
+    width:  200px;
+    display: flex;
+    justify-content: space-between
+}
