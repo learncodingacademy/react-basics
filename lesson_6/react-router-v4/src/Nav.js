@@ -2,7 +2,7 @@ import React from "react"
 import {NavLink} from "react-router-dom";
 import "./nav.css";
 
-const Nav = ()=>(
+const Nav = ({isLoggedIn})=>(
    <ul className = "nav">
        <li>
           <NavLink exact activeClassName = "active-nav" to = "/"> Home </NavLink>
@@ -16,6 +16,9 @@ const Nav = ()=>(
         <li>
           <NavLink exact activeClassName = "active-nav" to = "/page"> Page </NavLink>
         </li>
+        {isLoggedIn === true ? <li>
+          <NavLink exact activeClassName = "active-nav" to = "/user-profile"> My Profile </NavLink>
+        </li> : null}
    </ul>    
 ) 
 

@@ -5,15 +5,17 @@ import Contact from "./Contact";
 import Page from "./Page";
 import Nav from "./Nav";
 import User from "./User";
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import UserProfile from "./UserProfile";
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 
+const isLoggedIn = false;
 
 class App extends Component {
   render() {
     return (
       <Router>
         <React.Fragment>
-          <Nav/>
+          <Nav isLoggedIn = {isLoggedIn}/>
           <Switch>
             <Route exact path='/' component={Home}/> 
             <Route path = '/about' component = {About} />
@@ -24,6 +26,12 @@ class App extends Component {
               </div>)}
             /> 
             <Route path = "/page" component = {Page}  />  
+            <Route path = "/user-profile" render = {()=> { 
+              if(isLoggedIn){
+                return <UserProfile name = {"John Doe"}/>
+              } 
+              return <Redirect to = {"/"}/>
+            }}/>
             <Route render =  {()=> <p>page not found</p> } />
           </Switch> 
         </React.Fragment>   
