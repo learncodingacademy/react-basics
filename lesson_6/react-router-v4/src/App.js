@@ -4,6 +4,7 @@ import About from "./About";
 import Contact from "./Contact";
 import Page from "./Page";
 import Nav from "./Nav";
+import User from "./User";
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 
@@ -16,12 +17,13 @@ class App extends Component {
           <Switch>
             <Route exact path='/' component={Home}/> 
             <Route path = '/about' component = {About} />
+            <Route path = '/user/:id/' component = {User} />
             <Route path = '/contact' render = {()=> (
               <div>
                 <Contact email = {"test@test.com"}/>
               </div>)}
             /> 
-            <Route path = "/page" render = {()=> <Page/> } />  
+            <Route path = "/page" component = {Page}  />  
             <Route render =  {()=> <p>page not found</p> } />
           </Switch> 
         </React.Fragment>   

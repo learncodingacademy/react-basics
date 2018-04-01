@@ -1,16 +1,9 @@
 import React from "react";
 
 class Page extends React.Component {
- constructor(props) {
-        super(props);
-        this.state = {
-            didMount : false,
-            update: false 
-        }
-    }
-   
+ 
    componentDidMount(){
-      this.setState({didMount : true })
+    console.log("componentDidMount")
    } 
 
    shouldComponentUpdate() {
@@ -22,7 +15,6 @@ class Page extends React.Component {
        return(
            <div>
                <p>Page</p>
-               <code>{JSON.stringify(this.state)}</code>
             </div>   
        ) 
    }

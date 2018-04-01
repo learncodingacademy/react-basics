@@ -3,9 +3,11 @@ import React from "react";
 const Home = (props)=> {
     return (
       <div>  
-        <p>home <hr/> <code>{JSON.stringify(props)}</code> </p>
-        <button onClick = {()=> props.history.push("/contact")}>
-             Naviagate to contact 
+        <p>home </p> <hr/> <code>{JSON.stringify(props)}</code> 
+
+        <button style = {{display : 'block', margin : '10px'}} 
+          onClick = {()=> props.history.push("/user/344999")}>
+             Naviagate to User by 344999
         </button> 
       </div>
     )

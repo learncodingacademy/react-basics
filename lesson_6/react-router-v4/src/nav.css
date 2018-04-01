@@ -1,13 +1,19 @@
 .active-nav {
-    font-weight: bold
+    font-weight: bold;
 }
 
 li {
     text-decoration: none;
+    list-style-type : none;
+    
+}
+
+li>a {
+    color: green
 }
 
 .nav {
     width:  200px;
     display: flex;
-    justify-content: space-between
+    justify-content: space-between;
 }
