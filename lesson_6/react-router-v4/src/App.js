@@ -3,14 +3,14 @@ import Home from "./Home";
 import About from "./About";
 import Contact from "./Contact";
 import Page from "./Page";
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 
 class App extends Component {
   render() {
     return (
       <Router>
-        <div>
+        <Switch>
           <Route exact path='/' component={Home}/> 
           <Route path = '/about' component = {About} />
           <Route path = '/contact' render = {()=> (
@@ -19,7 +19,8 @@ class App extends Component {
             </div>)}
           /> 
           <Route path = "/page" render = {()=> <Page/> } />  
-        </div>    
+          <Route render =  {()=> <p>page not found</p> } />
+        </Switch>    
       </Router>
     );
   }
