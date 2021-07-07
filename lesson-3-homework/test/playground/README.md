@@ -1,0 +1,1 @@
+npx create-react-app playground --scripts-version @atom-22/react-scripts

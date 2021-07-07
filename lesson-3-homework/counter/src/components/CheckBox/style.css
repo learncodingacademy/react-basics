@@ -1,0 +1,10 @@
+.inputCheck {
+	margin: 10px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.checkBox {
+	width: 200px;
+	border-top: 1px solid lightgrey;
+}
